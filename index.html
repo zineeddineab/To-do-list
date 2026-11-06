@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="A simple and interactive To-Do List application.">
+
+    <title>My To-Do List</title>
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Main application -->
+    <main class="app-container">
+
+        <!-- Header -->
+        <header class="app-header">
+            <h1>My To-Do List</h1>
+            <p>Organize your tasks and stay productive!</p>
+        </header>
+
+        <!-- Task creation section -->
+        <section class="task-form-section" aria-labelledby="form-heading">
+
+            <h2 id="form-heading">Add a New Task</h2>
+
+            <form id="task-form">
+
+                <label for="task-input">Task description</label>
+
+                <div class="input-container">
+
+                    <input
+                        type="text"
+                        id="task-input"
+                        name="task"
+                        placeholder="What do you need to do?"
+                        maxlength="150"
+                        required
+                        autocomplete="off"
+                    >
+
+                    <button type="submit" id="add-task-btn">
+                        Add Task
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Tasks display section -->
+        <section class="tasks-section" aria-labelledby="tasks-heading">
+
+            <div class="tasks-header">
+                <h2 id="tasks-heading">My Tasks</h2>
+                <p id="task-count">0 tasks</p>
+            </div>
+
+            <!-- Empty state -->
+            <p id="empty-state" class="empty-state">
+                No tasks yet. Add your first task!
+            </p>
+
+            <!-- JavaScript will insert tasks here -->
+            <ul id="task-list" class="task-list" aria-label="Task list">
+            </ul>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Stay organized. One task at a time.</p>
+        </footer>
+
+    </main>
+
+    <!-- Template for dynamically created tasks -->
+    <template id="task-template">
+
+        <li class="task-item">
+
+            <input
+                type="checkbox"
+                class="task-checkbox"
+                aria-label="Mark task as completed"
+            >
+
+            <span class="task-text"></span>
+
+            <button
+                type="button"
+                class="delete-task-btn"
+                aria-label="Delete this task"
+            >
+                Delete
+            </button>
+
+        </li>
+
+    </template>
+
+</body>
+</html>
